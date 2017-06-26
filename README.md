@@ -1,2 +1,0 @@
-# hanoi
-towers of hanoï
