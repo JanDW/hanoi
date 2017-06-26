@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hanoi Towers</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			font-weight: 300;
+			color: #999;
+			padding: 1rem;
+		}
+
+		b {
+			color: #000;
+			font-weight: bold;
+		}
+
+		small {
+			color: #999;
+		}
+		.discs {
+			color: #666;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script>
+	var i = 0;
+	var discs = 18;
+	document.writeln('<h1>Towers of Hanoi &#47; ' + discs + ' discs.</h1>')
+	var hanoi = function(disc,src,aux,dst){
+		if (disc > 0) {
+			hanoi(disc - 1, src, dst, aux);
+			document.writeln('<p>Move <span class="muted">disc ' + disc + '</span> from <b>' + src + '</b> to <b>' + dst + '</b></p>');
+			i++;
+			hanoi(disc - 1, aux, src, dst);
+		}
+	};
+	hanoi(discs, 'A', 'B', 'C');
+	var duration = moment.duration(i,'seconds').humanize();
+	document.writeln('<br><br><p style="color:#5cb85c">Done! Required ' + i + ' moves.<br /><small>It would take ' + duration + ' to complete if you move one disc every second.</small></p>');
+	</script>
+</body>
+</html>
