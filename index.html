@@ -36,7 +36,7 @@
 	var hanoi = function(disc,src,aux,dst){
 		if (disc > 0) {
 			hanoi(disc - 1, src, dst, aux);
-			document.writeln('<p>Move <span class="muted">' + i + '. disc ' + disc + '</span> from <b>' + src + '</b> to <b>' + dst + '</b></p>');
+			document.writeln('<p>' + i + '. Move <span class="muted">disc ' + disc + '</span> from <b>' + src + '</b> to <b>' + dst + '</b></p>');
 			i++;
 			hanoi(disc - 1, aux, src, dst);
 		}
