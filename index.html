@@ -36,8 +36,8 @@
 	var hanoi = function(disc,src,aux,dst){
 		if (disc > 0) {
 			hanoi(disc - 1, src, dst, aux);
-			document.writeln('<p>' + i + '. Move <span class="muted">disc ' + disc + '</span> from <b>' + src + '</b> to <b>' + dst + '</b></p>');
 			i++;
+			document.writeln('<p>' + i + '. Move <span class="muted">disc ' + disc + '</span> from <b>' + src + '</b> to <b>' + dst + '</b></p>');
 			hanoi(disc - 1, aux, src, dst);
 		}
 	};
